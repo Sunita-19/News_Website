@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEWS WEBSITE </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="review.css">
+</head>
+<body>
+    <script src="https://use.fontawesome.com/a6f0361695.js"></script>
+    <nav>
+        <div class="main-nav container flex">
+            <a href="#" onclick="reload()" class="company-logo">
+                <img src="logo.png"alt="company logo">
+            </a>
+            <div class="nav-links">
+                <ul class="flex">
+                    <li class="hover-link nav-item" id="ipl" onclick="onNavItemClick('ipl')">IPL</li>
+                    <li class="hover-link nav-item" id="finance" onclick="onNavItemClick('finance')">Finance</li>
+                    <li class="hover-link nav-item" id="politics" onclick="onNavItemClick('politics')">Politics</li>
+                </ul>
+            </div>
+     
+            <div class="search-bar flex">
+                <input id="search-text" type="text" class="news-input" placeholder="e.g. Science">
+                <button id="search-button" class="search-button">Search</button>
+            </div>
+        </div>
+        <div>
+            <a href="login1.html">Log Out</a>
+        </div>
+    </nav>
+
+
+    <main>
+        <div class="cards-container container flex" id="cards-container">
+
+        </div>
+    </main>
+
+    <template id="template-news-card">
+        <div class="card">
+            <div class="card-header">
+                <img src="https://via.placeholder.com/400x200" alt="news-image" id="news-img">
+            </div>
+            <div class="card-content">
+                <h3 id="news-title">This is the Title</h3>
+                <h6 class="news-source" id="news-source">End Gadget 26/08/2023</h6>
+                <p class="news-desc" id="news-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae saepe quis voluptatum quisquam vitae doloremque facilis molestias quae ratione cumque!</p>
+            </div>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+
+</body>
+
+
+<footer>
+ <div class="footer-container">
+    <h3><a href="r2.html">Review</a></h3>
+    <h3><a href="about.html">About Us</a></h3>
+
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<a
+class="twitter-share-button"
+target="_blank"
+rel="noopener noreferrer"
+data-size="large"
+href="https://twitter.com/intent/tweet?text=I just published an article on how you can share content to Twitter from the client website"
+>
+share on Twitter
+</a>
+<a 
+href="https://www.linkedin.com/sharing/share-offsite/?url=unclebigbay.hashnode.dev" 
+target="_blank" 
+rel="noopener noreferrer"
+>
+Share on LinkedIn
+</a>
+<a
+    href="https://www.facebook.com/sharer/sharer.php?u=https://unclebigbay.hashnode.dev" 
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    Share on Facebook
+</a>
+
+ </div>
+ 
+</footer>
+
+</html> 
+

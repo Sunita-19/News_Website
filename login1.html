@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #211450;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 50px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccbdf8;
+            border-radius: 3px;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .error-message {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Login and Registration</h1>
+
+        <!-- Login Form -->
+        <form action="login.php" method="POST"
+        id="login-form">
+            <label for="loginUsername">Username:</label>
+            <input type="text" id="loginUsername" name="loginUsername" required>
+
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" name="loginPassword" required>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Registration Form -->
+        <form id="register-form" style="display: none;">
+            <label for="registerUsername">Username:</label>
+            <input type="text" id="registerUsername" name="registerUsername" required>
+
+            <label for="registerEmail">Email:</label>
+            <input type="email" id="registerEmail" name="registerEmail" required>
+
+            <label for="registerPassword">Password:</label>
+            <input type="password" id="registerPassword" name="registerPassword" required>
+
+            <button type="submit">Register</button>
+        </form>
+
+        <p class="error-message" id="error-message"></p>
+
+        <!-- Toggle between Login and Registration forms -->
+        <p>Not registered? <a href="#" id="toggle-form">Register here</a></p>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById("login-form");
+        const registerForm = document.getElementById("register-form");
+        const toggleFormLink = document.getElementById("toggle-form");
+        const errorMessage = document.getElementById("error-message");
+
+        toggleFormLink.addEventListener("click", function(event) {
+            event.preventDefault();
+
+            if (loginForm.style.display === "none") {
+                loginForm.style.display = "block";
+                registerForm.style.display = "none";
+            } else {
+                loginForm.style.display = "none";
+                registerForm.style.display = "block";
+            }
+
+            errorMessage.textContent = "";
+        });
+
+        loginForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            // Perform login validation here
+            const loginUsername = document.getElementById("loginUsername").value;
+            const loginPassword = document.getElementById("loginPassword").value;
+            // Simulate a successful login
+            if (loginUsername && loginPassword) {
+                errorMessage.textContent = "Login successful!";
+                window.location.href = "index.html";
+            } else {
+                errorMessage.textContent = "Invalid username or password.";
+            }
+        });
+
+        registerForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            // Perform registration logic here
+            const registerUsername = document.getElementById("registerUsername").value;
+            const registerEmail = document.getElementById("registerEmail").value;
+            const registerPassword = document.getElementById("registerPassword").value;
+            // Simulate a successful registration
+            if (registerUsername && registerEmail && registerPassword) {
+                errorMessage.textContent = "Registration successful!";
+                window.location.href = "index.html";
+            } else {
+                errorMessage.textContent = "Please fill in all fields.";
+            }
+        });
+        
+    </script>
+</body>
+</html>
